@@ -24,7 +24,7 @@ __global__ void sobelKernel(unsigned char* input, unsigned char* output, int wid
 }
 
 int main() {
-    printf("📥 Reading input image...\n");
+    printf("Reading input image...\n");
     FILE* fp = fopen("input/dbt_3000x1504.raw", "rb");
     if (!fp) { printf("❌ Failed to open input file.\n"); return -1; }
 
@@ -54,6 +54,6 @@ int main() {
     hipFree(d_input); hipFree(d_output);
     delete[] h_input; delete[] h_output;
 
-    printf("✅ HIP execution complete. Result saved.\n");
+    printf("HIP execution complete. Result saved.\n");
     return 0;
 }
